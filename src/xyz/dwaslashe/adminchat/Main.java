@@ -30,7 +30,7 @@ public class Main extends JavaPlugin implements Listener {
             getConfig().options().copyDefaults(true);
             saveConfig();
         } else {
-            getPluginLoader().disablePlugin((Plugin) this);
+            getPluginLoader().disablePlugin(this);
             System.out.println(Api.fixColor("Dowidzenia panu NAURA"));
         }
     }
@@ -58,5 +58,5 @@ public class Main extends JavaPlugin implements Listener {
                 }
             }
         }
-    }
+    }//aaaa
 }
