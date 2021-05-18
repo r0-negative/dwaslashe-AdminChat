@@ -5,8 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.dwaslashe.adminchat.utils.Api;
 
@@ -17,12 +15,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         if (getDescription().getName().contains("dwaslashe-AdminChat") && getDescription().getAuthors().contains("dwaslashe")) {
-            System.out.println("    /     /     Made in Poland");
-            System.out.println("   /     /      by dwaslashe (//)");
-            System.out.println("  /     /       nie wiem nudzi mi sie");
-            System.out.println(" /     /        pozdrawiam z rodzina");
-            System.out.println("/     /         miniserv.pl/rf/wywrotkamc polecam");
-            System.out.println("Jakbys chcial jakis plugin to do mnie pisz xD //#1013");
+            System.out.println("Wlaczam sie :D");
             getServer().getPluginManager().registerEvents(this, this);
             getConfig().addDefault("adminchat.permission", "dwaslashe.adminchat");
             getConfig().addDefault("adminchat.prefix", "@");
@@ -31,18 +24,13 @@ public class Main extends JavaPlugin implements Listener {
             saveConfig();
         } else {
             getPluginLoader().disablePlugin(this);
-            System.out.println(Api.fixColor("Dowidzenia panu NAURA"));
+            System.out.println(Api.fixColor("Nazwe pluginu ustaw na dwaslashe-AdminChat, a autora na dwaslashe"));
         }
     }
 
     @Override
     public void onDisable() {
-        System.out.println("    /     /     Made in Poland");
-        System.out.println("   /     /      by dwaslashe (//)");
-        System.out.println("  /     /       nie wiem nudzi mi sie");
-        System.out.println(" /     /        pozdrawiam z rodzina");
-        System.out.println("/     /         miniserv.pl/rf/wywrotkamc polecam");
-        System.out.println("Jakbys chcial jakis plugin to do mnie pisz xD //#1013");
+        System.out.println("Wylaczam sie :D");
     }
 
     @EventHandler
@@ -58,5 +46,5 @@ public class Main extends JavaPlugin implements Listener {
                 }
             }
         }
-    }//aaaa
+    }
 }
