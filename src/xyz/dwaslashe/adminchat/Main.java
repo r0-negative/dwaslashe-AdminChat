@@ -59,10 +59,4 @@ public class Main extends JavaPlugin implements Listener {
             }
         }
     }
-    @EventHandler
-    public void TestGithuba(PlayerJoinEvent event) {
-        Player p = event.getPlayer();
-        event.setJoinMessage(null);
-        p.sendMessage("witoj testowa");
-    }
 }
