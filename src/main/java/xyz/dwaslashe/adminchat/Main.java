@@ -34,14 +34,14 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onMessageSent(AsyncPlayerChatEvent e) {
-        if (!e.getMessage().startsWith(prefix)) return;
         Player p = e.getPlayer();
+        if (!e.getMessage().startsWith(prefix) && p.hasPermission(permission)) return;
         String message = e.getMessage().replace(prefix, "");
+        e.setCancelled(true);
 
         Bukkit.getOnlinePlayers()
-                .stream().filter(player -> player.hasPermission(permission) && p.hasPermission(permission))
+                .stream().filter(player -> player.hasPermission(permission))
                 .forEach(player -> {
-                    e.setCancelled(true);
                     String text = Api.fixColor(getConfig().getString("adminchat.message") + message).replace("{player}", p.getName());
                     player.sendMessage(text);
                     System.out.println(text);
